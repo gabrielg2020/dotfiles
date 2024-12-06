@@ -1,5 +1,8 @@
-# Setting up monitor layout
+# Setting up monitor layout & refresh rate
+# BUG: with WayLand any refreshrate > 100 will make the screen flash.
 exec --no-startup-id xrandr --output HDMI-A-1 --rotate left --left-of HDMI-A-0
+exec --no-startup-id xrandr --output HDMI-A-1 --mode 1920x1080 --rate 100
+exec --no-startup-id xrandr --output HDMI-A-0 --mode 2560-1440 --rate 100
 
 set $mod Mod4
 

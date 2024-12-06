@@ -2,6 +2,24 @@
 
 My personal dotfiles.
 
+## Warning
+
+These dotfile are built for MY setup, this mainly goes with my personal prefrences and especially my montior setup.
+
+### Finding Correct Monitor Setup
+
+Currently I have 2 monitors. One 1440p 144hz landscape, another 1080p 100hz veritcal
+
+Find all connected displays
+
+```bash
+xrandr
+```
+
+Look at the display names. E.g. HDMI-A-0 = 1440p & HDMI-A-1 = 1080p
+
+At the time of writing there is a bug with WayLand, any refresh-rate > 100 will make the screen flash.
+
 ## Requirements
 
 ### `i3` - Window Manager
