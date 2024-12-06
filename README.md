@@ -22,6 +22,12 @@ sudo apt install polybar
 sudo apt install dmenu
 ```
 
+### `oh-my-zsh` plugins - Auto Suggestion & Highlighting
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
+
 ### Bluetooth tools
 
 ```bash
