@@ -101,5 +101,25 @@ feh --bg-fill /path/to/image.png
 
 ### Want to disable mouse acceleration?
 
-#### Haven't figured it out yet 😞
+#### Removing mouse acceleration
 
+This is a bit of a process.
+
+1. Find your mouse `xinput` id
+
+```bash
+xinput list
+```
+
+2. List all of your mouse properies and find something with `Accel`
+
+```bash
+xinput list-props <id> | grep Accel
+```
+
+3. Set that prop to `0, 1`
+
+```bash
+# For me the prop was: "libinput Accel Profile Enabled"
+xinput set-prop <id> "libinput Accel Profile Enabled" 0, 1
+```
