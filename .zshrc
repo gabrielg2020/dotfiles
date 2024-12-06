@@ -1,3 +1,7 @@
+# Source ~/.profile
+
+source ~/.profile
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -29,5 +33,4 @@ if [[ -n $SSH_CONNECTION ]]; then
 alias zshconfig="vim ~/.zshrc"
 alias restartzsh="source ~/.zshrc"
 alias vim=nvim
-
 
