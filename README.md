@@ -53,12 +53,18 @@ systemctl status bluetooth
 
 ### `blueman` - Bluetooth GUI Manager
 
+> [!CAUTION]
+> Make sure `pulseaudio-module-bluetooth` is installed...
+
 ```bash
 sudo apt install blueman
 ```
 
-> [!CAUTION]
-> Make sure `pulseaudio-module-bluetooth` is installed...
+### `playerctl` - Media Control
+
+```bash
+sudo apt install playerctl
+```
 
 ## Troubleshooting
 
@@ -96,3 +102,4 @@ feh --bg-fill /path/to/image.png
 ### Want to disable mouse acceleration?
 
 #### Haven't figured it out yet 😞
+
