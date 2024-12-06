@@ -41,9 +41,20 @@ sudo apt install dmenu
 ```
 
 ### `oh-my-zsh` plugins - Auto Suggestion & Highlighting
+
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
+
+### `xclip` - Shared Clipboard
+
+> [!Warning]
+> `xclip` was the clipboard that for my linux distro, you many too change this in `.config/tmux/tmux.conf`
+> I think MacOS uses `xsel` and new versions of Ubuntu use `wl-clipboard`
+
+```bash
+sudo apt install xclip
 ```
 
 ### Bluetooth tools
