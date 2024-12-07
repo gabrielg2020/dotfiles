@@ -1,8 +1,7 @@
 # Setting up monitor layout & refresh rate
 # BUG: with WayLand any refreshrate > 100 will make the screen flash.
-exec --no-startup-id xrandr --output HDMI-A-1 --rotate left --left-of HDMI-A-0
-exec --no-startup-id xrandr --output HDMI-A-1 --mode 1920x1080 --rate 100
-exec --no-startup-id xrandr --output HDMI-A-0 --mode 2560x1440 --rate 100
+exec ~/.config/i3/scripts/setup-monitors.sh
+
 
 # Execute picom binary
 exec --no-startup-id picom
@@ -170,6 +169,11 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+
+exec --no-startup-id xrandr --output HDMI-A-1 --rotate left --left-of HDMI-A-0
+exec --no-startup-id xrandr --output HDMI-A-1 --mode 1920x1080 --rate 100
+exec --no-startup-id xrandr --output HDMI-A-0 --mode 2560x1440 --rate 100
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
