@@ -28,6 +28,12 @@ At the time of writing there is a bug with WayLand, any refresh-rate > 100 will 
 sudo apt install i3
 ```
 
+### `picom` - Compositor
+
+```bash
+sudo apt install picom
+```
+
 ### `polybar` - Status Bar
 
 ``` bash

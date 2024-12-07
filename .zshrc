@@ -21,7 +21,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
@@ -34,3 +33,6 @@ alias zshconfig="vim ~/.zshrc"
 alias restartzsh="source ~/.zshrc"
 alias vim=nvim
 
+# GPG
+
+GPG_TTY=${tty}
