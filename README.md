@@ -20,6 +20,12 @@ Look at the display names. E.g. HDMI-A-0 = 1440p & HDMI-A-1 = 1080p
 
 At the time of writing there is a bug with WayLand, any refresh-rate > 100 will make the screen flash.
 
+### What to change?
+
+Two files will need to be changed `./.config/i3/config` && `./.config/i3/scripts/setup-monitors.sh`
+
+Change any refrence to `HDIM-A-0` or `HDMI-A-1`. You can also change refresh rate, resolution and orientation.
+
 ## Requirements
 
 ### `i3` - Window Manager
