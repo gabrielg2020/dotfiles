@@ -32,6 +32,9 @@ exec --no-startup-id i3-msg 'workspace 2; exec firefox'
 # Execute picom binary
 exec --no-startup-id picom
 
+# Set wallpaper
+exec --no-startup-id feh --bg-scale ~/Pictures/background2.png --bg-fill
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
