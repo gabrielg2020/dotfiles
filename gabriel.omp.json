@@ -1,0 +1,125 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "lightYellow",
+          "style": "plain",
+          "template": "{{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "lightYellow",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "plain",
+          "template": "<#ffffff>in</>",
+          "type": "path"
+        },
+        {
+          "type": "path",
+          "foreground": "lightYellow",
+          "properties": {
+            "style": "agnoster_short",
+            "folder_separator_icon": "/",
+            "home_icon": "\ueb06"
+          },
+          "template": " {{ .Path }} "
+        },
+        {
+          "type": "git",
+          "foreground": "lightYellow",
+          "properties": {
+            "branch_icon": "\ue0a0 "
+          },
+          "style": "plain",
+          "template": "<#ffffff>on</> {{ .HEAD }} "
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "status",
+          "style": "diamond",
+          "foreground": "#1ee925",
+          "foreground_templates": [
+            "{{ if .Error }}#e91e63{{ end }}"
+          ],
+          "template": "[\uf071 {{ .Code }}] ",
+          "properties": {
+            "always_enabled": true
+          }
+        },
+        {
+          "type": "executiontime",
+          "style": "powerline",
+          "foreground": "#ffff00",
+          "template": "[ {{ .FormattedMs }}] ",
+          "properties": {
+            "threshold": 500,
+            "style": "austin",
+            "always_enabled": true
+          }
+        },
+        {
+          "foreground": "lightBlue",
+          "type": "go",
+          "style": "powerline",
+          "template": "[\ue626 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] "
+        },
+        {
+          "foreground": "lightYellow",
+          "type": "python",
+          "style": "powerline",
+          "template": "[\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Full }}{{ end }}{{ end }}] "
+        },
+        {
+          "foreground": "lightGreen",
+          "type": "node",
+          "style": "powerline",
+          "template": "[ {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] "
+        },
+        {
+          "foreground": "red",
+          "type": "ruby",
+          "style": "powerline",
+          "template": "[\ue791{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] "
+        },
+        {
+          "foreground": "lightYellow",
+          "type": "java",
+          "style": "powerline",
+          "template": "[\ue738 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] "
+        },
+        {
+          "foreground": "lightBlue",
+          "type": "dart",
+          "style": "powerline",
+          "template": "[ {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Full }}{{ end }}{{ end }}] "
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "lightGreen",
+          "style": "plain",
+          "template": "\u276f",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 3
+}
