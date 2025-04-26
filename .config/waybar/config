@@ -1,0 +1,27 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["custom/user-ip"],
+    "modules-right": ["clock"],
+    
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+    
+    "custom/user-ip": {
+        "exec": "echo \"$(whoami)@$(ip route get 1 | awk '{print $7; exit}')\"",
+        "interval": 60,
+        "format": "{}",
+        "tooltip": false
+    },
+    
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    }
+}

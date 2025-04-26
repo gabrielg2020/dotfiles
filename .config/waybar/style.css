@@ -1,0 +1,64 @@
+* {
+    font-family: "FiraCode", "Font Awesome 6 Free", monospace;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(26, 27, 38, 0.9); /* #1a1b26 with transparency */
+    color: #c0caf5;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #a9b1d6;
+    background: transparent;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button:hover {
+    background: rgba(122, 162, 247, 0.2); /* #7aa2f7 with transparency */
+}
+
+#workspaces button.active {
+    color: #7aa2f7;
+    border-bottom: 3px solid #7aa2f7;
+}
+
+#workspaces button.urgent {
+    background-color: #f7768e;
+    color: #15161e;
+}
+
+#custom-user-ip {
+    padding: 0 10px;
+    color: #bb9af7; /* Purple from the theme */
+}
+
+#clock {
+    padding: 0 10px;
+    color: #7dcfff; /* Cyan from the theme */
+}
+
+/* Optional: Add a subtle border to match Tokyo Night aesthetic */
+window#waybar {
+    border-bottom: 2px solid #283457;
+}
+
+/* Optional: For tooltip styling */
+tooltip {
+    background: #16161e;
+    border: 1px solid #7aa2f7;
+    border-radius: 5px;
+}
+
+tooltip label {
+    color: #c0caf5;
+    padding: 5px;
+}

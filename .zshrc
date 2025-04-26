@@ -1,11 +1,17 @@
 # Source ~/.profile
-
 source ~/.profile
 
-# Path to your Oh My Zsh installation.
+# Reset PATH
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.local/bin
+
+# Path to Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 
 ZSH_THEME="robbyrussell"
+
+# Oh-My-Posh
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/gabriel.omp.json)"
 
 # Remind to update oh-my-zsh evert 7 days.
 zstyle ':omz:update' mode reminder
@@ -32,7 +38,14 @@ if [[ -n $SSH_CONNECTION ]]; then
 alias zshconfig="vim ~/.zshrc"
 alias restartzsh="source ~/.zshrc"
 alias vim=nvim
+alias windows="sudo efibootmgr --bootnext 0000 && reboot"
 
 # GPG
-
 GPG_TTY=${tty}
+
+# makepkg
+export BUILDDIR=$HOME/build
+export PKGDIR=$HOME/packages
+
+# Go
+export PATH=$PATH:$GOPATH/bin
