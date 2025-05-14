@@ -1,137 +1,64 @@
-/*
- * Tokyonight colorscheme (big icons) for rofi
- * User: w8ste
- */
-
-
-// define colors etc.
 * {
-    bg: #24283b;
-    hv: #9274ca; 
-    primary: #C5C8C6; 
-    ug: #0B2447;
-    font: "FiraCode Font 11";
-    background-color: @bg;
-    //dark: @bg;
-    border: 0px;
-    kl: #7aa2f7;
-    black: #000000;
-
-    transparent: rgba(46,52,64,0);
+  background-color: #292e42;
+  background-color-alt: #414868;
+  border-color: #1f2335;
+  text-color-light: #c0caf5;
+  text-color-highlight: #ff9e64;
+  selected-color: #9d7cd8;
 }
 
-// defines different aspects of the window
+configuration {
+  modi: "drun";
+  font: "FiraCode Font 14";
+  show-icons: true;
+  terminal: "kitty";
+  location: 0;
+  click-to-exit: true;
+}
+
 window {
-    width: 700;
-    /*since line wont work with height, i comment it out 
-    if you rather control the size via height
-    just comment it out */
-    //height: 500;
-
-    orientation: horizontal;
-    location: center;
-    anchor: center;
-    transparency: "screenshot";
-    border-color: @transparent;   
-    border: 0px;
-    border-radius: 6px;
-    spacing: 0;
-    children: [ mainbox ];
-}
-
-mainbox {
-    spacing: 0;
-    children: [ inputbar, message, listview ];
-}
-
-inputbar {
-    color: @kl;
-    padding: 11px;
-    border: 3px 3px 2px 3px;
-    border-color: @hv;
-    border-radius: 6px 6px 0px 0px;
-}
-
-message {
-    padding: 0;
-    border-color: @hv;
-    border: 0px 1px 1px 1px;
-}
-
-entry, prompt, case-indicator {
-    text-font: inherit;
-    text-color: inherit;
+  background-color: @background-color;
+  border-color: @border-color;
+  transparency: "real";
+  width: 20%;
+  border: 0px;
+  border-radius: 6px;
 }
 
 entry {
-    cursor: pointer;
+  text-color: @text-color-light;
+  margin: 2px 0px 0px 10px; 
 }
 
-prompt {
-    margin: 0px 5px 0px 0px;
+prompt, textbox-prompt-colon, num-rows, num-filtered-rows, textbox-num-sep {
+  enabled: false;
+  text-color: transparent;
 }
 
 listview {
-    layout: vertical;
-    //spacing: 5px;
-    padding: 8px;
-    lines: 7;
-    columns: 1;
-    border: 0px 3px 3px 3px; 
-    border-radius: 0px 0px 6px 6px;
-    border-color: @hv;
-    dynamic: false;
+  scrollbar: false;
+  lines: 4;
+  background-color: transparent;
 }
 
 element {
-    padding: 2px;
-    vertical-align: 1;
-    color: @kl;
-    font: inherit;
-}
-
-element-text {
-    background-color: inherit;
-    text-color: inherit;
-    vertical-align: 0.5;
+  padding: 8px;
+  spacing: 8px;
 }
 
 element selected.normal {
-    color: @black;
-    background-color: @hv;
+  background-color: @selected-color;
 }
 
-element normal active {
-    background-color: @hv;
-    color: @black;
+element.normal.normal {
+  background-color: @background-color-alt;
 }
 
-element-icon {
-    background-color: inherit;
-    text-color: inherit;
-    size: 2.5em;
+element.alternate.normal {
+  background-color: @background-color;
+  }
+
+element-text {
+  text-color: @text-color-light;
 }
 
-element normal urgent {
-    background-color: @hv;
-}
-
-element selected active {
-    background: @hv;
-    foreground: @bg;
-}
-
-button {
-    padding: 6px;
-    color: @hv;
-    horizonatal-align: 0.5;
-
-    border: 2px 0px 2px 2px;
-    border-radius: 4px 0px 0px 4px;
-    border-color: @hv;
-}
-
-button selected normal {
-    border: 2px 0px 2px 2px;
-    border-color: @hv;
-}

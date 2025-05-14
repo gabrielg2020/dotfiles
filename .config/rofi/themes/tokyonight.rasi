@@ -8,11 +8,10 @@
 * {
     bg: #24283b;
     hv: #9274ca; 
-    primary: #C5C8C6; 
-    ug: #0B2447;
+    primary: #c0caf5; 
+    ug: #0b2447;
     font: "FiraCode Font 11";
     background-color: @bg;
-    //dark: @bg;
     border: 0px;
     kl: #7aa2f7;
     black: #000000;
@@ -22,12 +21,7 @@
 
 // defines different aspects of the window
 window {
-    width: 700;
-    /*since line wont work with height, i comment it out 
-    if you rather control the size via height
-    just comment it out */
-    //height: 500;
-
+    width: 100;
     orientation: horizontal;
     location: center;
     anchor: center;
@@ -46,10 +40,9 @@ mainbox {
 
 inputbar {
     color: @kl;
-    padding: 11px;
-    border: 3px 3px 2px 3px;
+    border: 3px 3px 3px 3px;
     border-color: @primary;
-    border-radius: 6px 6px 0px 0px;
+    border-radius: 3px 3px 3px 3px;
 }
 
 message {
@@ -68,12 +61,11 @@ entry {
 }
 
 prompt {
-    margin: 0px 5px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 listview {
     layout: vertical;
-    //spacing: 5px;
     padding: 8px;
     lines: 12;
     columns: 1;

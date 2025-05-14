@@ -39,6 +39,7 @@ alias zshconfig="vim ~/.zshrc"
 alias restartzsh="source ~/.zshrc"
 alias vim=nvim
 alias windows="sudo efibootmgr --bootnext 0000 && reboot"
+alias p="cd $HOME/projects"
 
 # GPG
 GPG_TTY=${tty}
@@ -49,3 +50,8 @@ export PKGDIR=$HOME/packages
 
 # Go
 export PATH=$PATH:$GOPATH/bin
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
