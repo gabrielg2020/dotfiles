@@ -40,6 +40,7 @@ alias restartzsh="source ~/.zshrc"
 alias vim=nvim
 alias windows="sudo efibootmgr --bootnext 0000 && reboot"
 alias p="cd $HOME/projects"
+alias bt="sudo systemctl restart bluetooth && bluetui"
 
 # GPG
 GPG_TTY=${tty}
