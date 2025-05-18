@@ -1,0 +1,49 @@
+* {
+  background-image: none;
+  font-family: "Fira Code", monospace;
+  font-size: 1.4rem;
+}
+
+window {
+  background-color: rgba(31, 35, 53, 0.9);
+  background-size: cover;
+}
+
+button {
+  color: #c0caf5;
+  background-color: #24283b;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #414868;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+  border-radius: 8px;
+  margin: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:focus,
+button:active,
+button:hover {
+  color: #7aa2f7;
+  background-color: #3b4261;
+  border-color: #7aa2f7;
+  box-shadow: 0 4px 8px 0 rgba(42, 86, 198, 0.3), 0 6px 20px 0 rgba(42, 86, 198, 0.25);
+}
+
+#logout {
+  background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+  background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+#shutdown {
+  background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+  background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}
