@@ -41,6 +41,7 @@ alias vim=nvim
 alias windows="sudo efibootmgr --bootnext 0000 && reboot"
 alias p="cd $HOME/projects"
 alias bt="sudo systemctl restart bluetooth && bluetui"
+alias t=tmux
 
 # GPG
 GPG_TTY=${tty}
