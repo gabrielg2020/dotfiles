@@ -1,17 +1,14 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
-
--- Set clipboard provider to use wl-clipboard
-vim.g.clipboard = {
-  name = "wl-clipboard",
-  copy = {
-    ["+"] = "wl-copy --type text/plain",
-    ["*"] = "wl-copy --type text/plain --primary",
-  },
-  paste = {
-    ["+"] = "wl-paste --no-newline",
-    ["*"] = "wl-paste --no-newline --primary",
-  },
-  cache_enabled = 1,
-}
+-- Tabs & Spacing
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+-- Line Numbers
+vim.wo.number = true
+vim.wo.relativenumber = true
+-- Lines
+vim.opt.wrap = false
+vim.opt.linebreak = true
+-- Improved Searching
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
