@@ -17,6 +17,7 @@ return {
     },
   },
 
+  -- lsp-config
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" }, -- load plugin for bufs that already exisit and new bufs that get created

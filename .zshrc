@@ -42,6 +42,7 @@ alias windows="sudo efibootmgr --bootnext 0000 && reboot"
 alias p="cd $HOME/projects"
 alias bt="sudo systemctl restart bluetooth && bluetui"
 alias t=tmux
+alias tree='tree -I "node_modules|.git"'
 
 # GPG
 GPG_TTY=${tty}
@@ -51,6 +52,7 @@ export BUILDDIR=$HOME/build
 export PKGDIR=$HOME/packages
 
 # Go
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # NVM
