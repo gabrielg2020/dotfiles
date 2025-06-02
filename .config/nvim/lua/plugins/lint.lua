@@ -7,6 +7,12 @@ return {
     config = function ()
       local lint = require("lint")
 
+      -- luacheck recognises vim global
+      lint.linters.luacheck.args = {
+        '--globals', 'vim',
+        '--codes',
+      }
+
       lint.linters_by_ft = {
         lua = {"luacheck"},
         go = {"golangcilint"},
