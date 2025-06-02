@@ -1,6 +1,6 @@
 # Core environment variables
 export EDITOR="nvim"
-GPG_TTY=$(tty)
+export GPG_TTY=$(tty)
 
 # Build directories
 export BUILDDIR=$HOME/build
