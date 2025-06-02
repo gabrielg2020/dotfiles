@@ -1,12 +1,11 @@
+# Restart PATH (keeps PATH looking clean)
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.local/bin
+
 # Source ~/.profile
 source ~/.profile
 
-# Reset PATH
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.local/bin
-
 # Path to Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
 
 ZSH_THEME="robbyrussell"
 
@@ -26,14 +25,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='nvim'
- fi
-
 # Set aliases
 alias zshconfig="vim ~/.zshrc"
 alias restartzsh="source ~/.zshrc"
@@ -43,19 +34,3 @@ alias p="cd $HOME/projects"
 alias bt="sudo systemctl restart bluetooth && bluetui"
 alias t=tmux
 alias tree='tree -I "node_modules|.git"'
-
-# GPG
-GPG_TTY=${tty}
-
-# makepkg
-export BUILDDIR=$HOME/build
-export PKGDIR=$HOME/packages
-
-# Go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
