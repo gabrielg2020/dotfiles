@@ -13,6 +13,7 @@ return {
 
       -- Keymaps
       vim.keymap.set({ "n", "v" }, "<leader>lf", function()
+        print("Formmating")
         require("conform").format({ lsp_fallback = true })
       end, { desc = "Format file" })
     end
