@@ -41,12 +41,13 @@ return {
 
         return total_plugins .. " plugins"
       end
-
       dashboard.section.footer.val = footer()
 
       dashboard.opts.layout[1].val = 8
-
       alpha.setup(dashboard.config)
+
+      -- keymaps
+      vim.keymap.set('n', '<leader><BS>', ":Alpha<CR>", {desc="Goto Dashboard"})
     end
   }
 }

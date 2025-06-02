@@ -9,7 +9,7 @@ return {
     config = function()
       local cmp = require("cmp")
 
-      cmp.setup({
+      local opts = {
         completion = {
           completeopt = "menu,menuone,preview,noselect",
         },
@@ -26,7 +26,9 @@ return {
           { name = "buffer" },
           { name = "path" },
         }),
-      })
+      }
+
+      cmp.setup(opts)
     end,
   }
 }

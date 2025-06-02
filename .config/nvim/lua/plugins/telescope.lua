@@ -7,33 +7,34 @@ return {
       "nvim-tree/nvim-web-devicons",
       "cljoly/telescope-repo.nvim",
     },
-    config = function()
-      local telescope = require("telescope")
-      telescope.setup({
-        defaults = {
-          file_ignore_patterns = {
-            "node_modules/",
-            ".git/",
-          },
+    opts = {
+      defaults = {
+        file_ignore_patterns = {
+          "node_modules/",
+          ".git/",
         },
-        pickers = {
-          find_files = {
-            hidden = true,
-          },
+      },
+      pickers = {
+        find_files = {
+          hidden = true,
         },
-        extensions = {
-          repo = {
-            list = {
-              fd_opts = {
-                "--no-ignore-vcs",
-              },
-              search_dirs = {
-                "~/projects",
-              },
+      },
+      extensions = {
+        repo = {
+          list = {
+            fd_opts = {
+              "--no-ignore-vcs",
+            },
+            search_dirs = {
+              "~/projects",
             },
           },
         },
-      })
+      },
+    },
+    config = function(_, opts)
+      local telescope = require("telescope")
+      telescope.setup(opts)
 
       telescope.load_extension("fzf")
       telescope.load_extension("repo")
