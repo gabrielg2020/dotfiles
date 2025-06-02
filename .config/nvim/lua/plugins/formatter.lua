@@ -11,9 +11,15 @@ return {
         },
       })
 
-      -- Keymaps
+      -- format on save
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        callback = function()
+          require("conform").format({ lsp_fallback = true })
+        end
+      })
+
+      -- keymaps
       vim.keymap.set({ "n", "v" }, "<leader>lf", function()
-        print("Formmating")
         require("conform").format({ lsp_fallback = true })
       end, { desc = "Format file" })
     end

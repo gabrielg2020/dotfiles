@@ -4,7 +4,7 @@ return {
     dependencies = {
       "mason-org/mason.nvim",
     },
-    config = function ()
+    config = function()
       local lint = require("lint")
 
       -- luacheck recognises vim global
@@ -14,10 +14,10 @@ return {
       }
 
       lint.linters_by_ft = {
-        lua = {"luacheck"},
-        go = {"golangcilint"},
-        typescript = {"biomejs"},
-        javascript = {"biomejs"},
+        lua = { "luacheck" },
+        go = { "golangcilint" },
+        typescript = { "biomejs" },
+        javascript = { "biomejs" },
       }
 
       vim.diagnostic.config({
@@ -33,16 +33,16 @@ return {
       })
 
       -- Run lint on save a text change
-      vim.api.nvim_create_autocmd({"BufWritePost", "BufReadPost", "InsertLeave"}, {
-        callback = function ()
+      vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+        callback = function()
           lint.try_lint()
         end,
       })
 
       -- Keymaps
-      vim.keymap.set("n", "<leader>ll", function ()
+      vim.keymap.set("n", "<leader>ll", function()
         lint.try_lint()
-      end, {desc = "Trigger linting"})
+      end, { desc = "Trigger linting" })
     end
   }
 }
