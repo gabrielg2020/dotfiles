@@ -1,1 +1,9 @@
-xinput
+# Tmux plugins (managed by tpm)
+.config/tmux/.tmux/plugins/
+
+# Neovim runtime
+.config/nvim/nvim-pack-lock.json
+
+# Sensitive files
+*/.secrets
+zsh/.zshrc.local
