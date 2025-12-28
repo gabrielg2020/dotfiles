@@ -1,5 +1,9 @@
 # Tmux Configuration Reference
 
+## Overview
+
+Minimal tmux configuration with Vague colour scheme, vi-mode keybindings, and cross-platform clipboard support.
+
 ## Prefix Key
 
 The prefix key has been remapped from the default `Ctrl-b` to `Ctrl-f`.
@@ -88,18 +92,6 @@ Plugin manager for tmux. Install plugins with `Ctrl-f I`, update with `Ctrl-f U`
 Sensible default settings for tmux that everyone can agree on.
 
 **Repository:** [tmux-plugins/tmux-sensible](https://github.com/tmux-plugins/tmux-sensible)
-
-### tmux-sidebar
-
-A sidebar with a directory tree for the current path. Toggle with `Ctrl-f Tab` or `Ctrl-f Backspace`.
-
-**Repository:** [tmux-plugins/tmux-sidebar](https://github.com/tmux-plugins/tmux-sidebar)
-
-### tmux-cpu
-
-Displays CPU and RAM usage in the status bar.
-
-**Repository:** [tmux-plugins/tmux-cpu](https://github.com/tmux-plugins/tmux-cpu)
 
 ## Features
 
