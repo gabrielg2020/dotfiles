@@ -5,6 +5,9 @@ vim.pack.add({
 	{ src = gh('neovim/nvim-lspconfig') },
 	{ src = gh('stevearc/oil.nvim') },
 	{ src = gh('echasnovski/mini.pick') },
+	{ src = gh('echasnovski/mini.pairs') },
+	{ src = gh('echasnovski/mini.comment') },
+	{ src = gh('echasnovski/mini.diff') },
 	{ src = gh('mason-org/mason.nvim') },
 	{ src = gh('mason-org/mason-lspconfig.nvim') },
 	{ src = gh('saghen/blink.cmp') },
@@ -18,8 +21,12 @@ mason.setup()
 -- blink
 local blink = require('blink.cmp')
 blink.setup({
-	-- todo: figure out why the rust binary is failing to be pulled...
-	fuzzy = { implementation = "lua" },
+	fuzzy = {
+		implementation = "prefer_rust",
+		prebuilt_binaries = {
+			force_version = "v1.8.0",
+		}
+	},
 })
 local capabilities = blink.get_lsp_capabilities()
 
@@ -33,10 +40,15 @@ for _, server_name in ipairs(mason.get_installed_servers()) do
 	vim.lsp.enable(server_name)
 end
 
--- file picker
-require 'mini.pick'.setup()
+-- file explorer
 require 'oil'.setup()
 
--- Theme
+-- minis
+require 'mini.pick'.setup()    -- selection picker
+require 'mini.comment'.setup() -- block commenting
+require 'mini.pairs'.setup()   -- autopairs
+require 'mini.diff'.setup()    -- diff lines
+
+-- theme
 vim.cmd('colorscheme vague')
 vim.cmd(':hi statusline guibg=NONE')
