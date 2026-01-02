@@ -46,6 +46,7 @@ alias cd="z"
 alias cdi="zi"
 alias lg="lazygit"
 alias tree="tree -a -I .git --gitignore"
+alias c="clear"
 
 # Languages & Tools
 # Disable Apple press and hold for VSCode only
