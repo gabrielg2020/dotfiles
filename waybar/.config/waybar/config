@@ -1,0 +1,81 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock#date"],
+    "modules-right": ["cpu", "memory", "pulseaudio", "custom/notifications"],
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%A, %B %d, %Y - %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#e8b589'><b>{}</b></span>",
+                "days": "<span color='#cdcdcd'><b>{}</b></span>",
+                "weeks": "<span color='#6e94b2'><b>W{}</b></span>",
+                "weekdays": "<span color='#9bb4bc'><b>{}</b></span>",
+                "today": "<span color='#c48282'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    "clock#date": {
+        "format": "{:%a %d %b %H:%M}",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "[{name}]",
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    "cpu": {
+        "format": " {avg_frequency}GHz",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": " {used:0.1f}GB",
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "\uf026",
+        "format-icons": {
+            "default": ["\uf027", "\uf027", "\uf028"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/media": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/media.sh",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "interval": 1,
+        "max-length": 50
+    },
+
+    "custom/notifications": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/notifications.sh",
+        "on-click": "swaync-client -t -sw",
+        "interval": 1,
+        "tooltip": false
+    }
+}

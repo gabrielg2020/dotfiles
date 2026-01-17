@@ -1,0 +1,74 @@
+@import "colors/vague.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "IBM Plex Mono";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(50, 50, 50, 0.7);
+    color: @fg;
+    border-radius: 10px;
+    margin: 8px;
+}
+
+/* Left - Workspaces */
+#workspaces {
+    padding: 0 8px;
+    margin: 4px 0 4px 4px;
+}
+
+#workspaces button {
+    padding: 0 12px;
+    color: @comment;
+    background: transparent;
+}
+
+#workspaces button:hover {
+    color: @type;
+}
+
+#workspaces button.active {
+    color: @string;
+}
+
+#workspaces button.urgent {
+    color: @error;
+}
+
+/* Center - Clock */
+#clock {
+    color: @string;
+    padding: 0 16px;
+}
+
+/* Right - CPU, Memory, Sound & Notifications */
+#cpu {
+    color: @builtin;
+    padding: 0 8px 0 12px;
+}
+
+#memory {
+    color: @keyword;
+    padding: 0 12px 0 8px;
+}
+
+#pulseaudio {
+    color: @builtin;
+    padding: 0 12px;
+    font-size: 18px;
+}
+
+#pulseaudio.muted {
+    color: @error;
+}
+
+#custom-notifications {
+    color: @hint;
+    padding: 0 12px;
+    margin: 4px 4px 4px 0;
+    font-size: 18px;
+}
