@@ -1,0 +1,235 @@
+/**
+ * Vague Theme for SwayNC
+ * Based on https://github.com/vague-theme/vague.nvim
+ */
+
+* {
+  font-family: "FiraCode Nerd Font Mono";
+  font-size: 13px;
+}
+
+/* Control Center */
+.control-center {
+  background: #141415;
+  border: 2px solid #252530;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* Header */
+.control-center .widget-title {
+  background: #1c1c24;
+  color: #e8b589;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.control-center .widget-title button {
+  background: #252530;
+  color: #cdcdcd;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin-left: 8px;
+}
+
+.control-center .widget-title button:hover {
+  background: #333738;
+  color: #e8b589;
+}
+
+/* DND Toggle */
+.control-center .widget-dnd {
+  background: #1c1c24;
+  color: #cdcdcd;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.control-center .widget-dnd > switch {
+  background: #252530;
+  border-radius: 12px;
+}
+
+.control-center .widget-dnd > switch:checked {
+  background: #6e94b2;
+}
+
+.control-center .widget-dnd > switch slider {
+  background: #cdcdcd;
+  border-radius: 50%;
+}
+
+/* Media Player */
+.control-center .widget-mpris {
+  background: #1c1c24;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.widget-mpris-player {
+  background: transparent;
+  padding: 8px;
+}
+
+.widget-mpris-album-art {
+  border-radius: 6px;
+}
+
+.widget-mpris-title {
+  color: #e8b589;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.widget-mpris-subtitle {
+  color: #9bb4bc;
+  font-size: 12px;
+}
+
+.widget-mpris-player button {
+  background: #252530;
+  color: #6e94b2;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 4px;
+}
+
+.widget-mpris-player button:hover {
+  background: #333738;
+  color: #9bb4bc;
+}
+
+/* Notifications List */
+.notification-row {
+  margin-bottom: 8px;
+}
+
+.notification {
+  background: #1c1c24;
+  border: 1px solid #252530;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 4px 0;
+}
+
+.notification:hover {
+  background: #252530;
+}
+
+/* Notification Content */
+.notification-content {
+  color: #cdcdcd;
+}
+
+.notification .summary {
+  color: #e8b589;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.notification .body {
+  color: #cdcdcd;
+  font-size: 13px;
+}
+
+.notification .app-name {
+  color: #606079;
+  font-size: 11px;
+}
+
+/* Notification Icon */
+.notification .icon {
+  margin-right: 12px;
+}
+
+/* Close Button */
+.close-button {
+  background: #252530;
+  color: #d8647e;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.close-button:hover {
+  background: #d8647e;
+  color: #141415;
+}
+
+/* Notification Actions */
+.notification .notification-action {
+  background: #252530;
+  color: #6e94b2;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 4px 4px 0 0;
+}
+
+.notification .notification-action:hover {
+  background: #333738;
+  color: #9bb4bc;
+}
+
+/* Critical Notifications */
+.notification.critical {
+  border: 2px solid #d8647e;
+}
+
+.notification.critical .summary {
+  color: #d8647e;
+}
+
+/* Popup Notifications */
+.notification-window {
+  background: transparent;
+}
+
+.floating-notifications .notification {
+  background: #1c1c24;
+  border: 2px solid #252530;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px;
+}
+
+/* Scrollbar */
+.control-center scrollbar {
+  background: transparent;
+}
+
+.control-center scrollbar slider {
+  background: #252530;
+  border-radius: 4px;
+}
+
+.control-center scrollbar slider:hover {
+  background: #333738;
+}
+
+/* Empty Notifications */
+.blank-window {
+  background: transparent;
+}
+
+.notification-group {
+  margin-bottom: 8px;
+  background: transparent;
+}
+
+.notification-group-headers {
+  background: transparent;
+  color: #9bb4bc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  font-weight: bold;
+}

@@ -1,0 +1,87 @@
+# Reset PATH
+
+export USRBIN="/usr/bin"
+export BIN="/bin"
+export USRSBIN="/usr/sbin"
+export SBIN="/sbin"
+export USRLOCALBIN="/usr/local/bin"
+export HOMEBREWBIN="/opt/homebrew/bin"
+export NVIM_BOB="$HOME/.local/share/bob/nvim-bin"
+export PATH=$NVIM_BOB:$HOMEBREWBIN:$USRLOCALBIN:$USRBIN:$BIN:$USRSBIN:$SBIN
+
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="darkblood"
+
+# Reminder to update Oh-My-Zsh.
+zstyle ':omz:update' mode reminder
+
+# Remind to update Oh-My-Zsh every 7 days.
+zstyle ':omz:update' frequency 7
+
+# Enable corrections and waiting dots
+#ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting aws)
+
+source $ZSH/oh-my-zsh.sh
+
+# Load secrets (file not in version control)
+if [ -f ~/.secrets ]; then
+    source ~/.secrets
+fi
+
+# User configuration
+# Set aliases.
+alias zshconfig="vim ~/.zshrc"
+alias restartzsh="source ~/.zshrc"
+alias vim=nvim
+alias fpr="git stash && git switch main && git pull && git stash pop"
+alias cd="z"
+alias cdi="zi"
+alias lg="lazygit"
+alias tree="tree -a -I .git --gitignore"
+alias c="clear"
+
+# Languages & Tools
+# Disable Apple press and hold for VSCode only
+# defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# PHP
+#export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
+
+# Python
+export PYTHONVERSION="3.14"
+export PYTHONPATH=$HOMEBREWBIN/python3
+export PATH=$PATH:$PYTHONPATH/bin
+
+# Go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# GPG
+export GPG_TTY=$(tty)
+
+# Ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# LSP
+# Lua
+export PATH=$PATH:$HOMEBREWBIN/lua-language-server
+
+# Oh-My-Posh
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/gabriel.omp.json)"
+
+# Zoxide (need to be at the end)
+eval "$(zoxide init zsh)"
