@@ -20,6 +20,10 @@
       "rev": "fbb93ea1728e7c9d0944df8bd022a68402bd2e7e",
       "src": "https://github.com/echasnovski/mini.diff"
     },
+    "mini.indentscope": {
+      "rev": "0308f949f31769e509696af5d5f91cebb2159c69",
+      "src": "https://github.com/echasnovski/mini.indentscope"
+    },
     "mini.pairs": {
       "rev": "d5a29b6254dad07757832db505ea5aeab9aad43a",
       "src": "https://github.com/echasnovski/mini.pairs"
