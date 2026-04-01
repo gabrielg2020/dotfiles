@@ -4,88 +4,76 @@
     "height": 34,
     "spacing": 4,
 
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock#date"],
-    "modules-right": ["cpu", "memory", "pulseaudio", "bluetooth", "custom/notifications"],
+    "modules-left": ["clock", "network", "bluetooth", "pulseaudio", "custom/pi-status"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["custom/local-ip", "cpu", "memory", "temperature", "load"],
 
     "clock": {
-        "format": "{:%H:%M}",
-        "format-alt": "{:%A, %B %d, %Y - %H:%M}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 3,
-            "weeks-pos": "right",
-            "on-scroll": 1,
-            "format": {
-                "months": "<span color='#e8b589'><b>{}</b></span>",
-                "days": "<span color='#cdcdcd'><b>{}</b></span>",
-                "weeks": "<span color='#6e94b2'><b>W{}</b></span>",
-                "weekdays": "<span color='#9bb4bc'><b>{}</b></span>",
-                "today": "<span color='#c48282'><b><u>{}</u></b></span>"
-            }
-        }
-    },
-
-    "clock#date": {
-        "format": "{:%a %d %b %H:%M}",
+        "format": "[{:%H:%M}]",
         "tooltip": false
     },
 
-    "hyprland/workspaces": {
-        "format": "[{name}]",
-        "on-click": "activate",
-        "persistent-workspaces": {
-            "*": 5
-        }
-    },
-
-    "cpu": {
-        "format": " {avg_frequency}GHz",
-        "tooltip": false
-    },
-
-    "memory": {
-        "format": " {used:0.1f}GB",
-        "tooltip": false
-    },
-
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-muted": "\uf026",
-        "format-icons": {
-            "default": ["\uf027", "\uf027", "\uf028"]
-        },
-        "on-click": "pavucontrol"
+    "network": {
+        "format-wifi": "[󰖩 ]",
+        "format-ethernet": "[󰈀 ]",
+        "format-disconnected": "[󰖪 ]",
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "on-click": "nm-connection-editor"
     },
 
     "bluetooth": {
-        "format": "",
-        "format-disabled": "",
-        "format-connected": " {num_connections}",
+        "format": "[󰂯]",
+        "format-disabled": "[󰂲]",
+        "format-connected": "[󰂱]",
         "tooltip-format": "{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "on-click": "blueman-manager"
     },
 
-    "custom/media": {
-        "format": "{}",
-        "return-type": "json",
-        "exec": "~/.config/waybar/scripts/media.sh",
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous",
-        "interval": 1,
-        "max-length": 50
+    "pulseaudio": {
+        "format": "[󰕾]",
+        "format-muted": "[󰖁]",
+        "tooltip": false,
+        "on-click": "pavucontrol"
     },
 
-    "custom/notifications": {
+    "hyprland/workspaces": {
+        "format": "[{name}]",
+        "active-only": true
+    },
+
+    "cpu": {
+        "format": "[CPU {usage}%]",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "[MEM {used:0.1f}GB]",
+        "tooltip": false
+    },
+
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+        "format": "[TEMP {temperatureC}°C]",
+        "tooltip": false
+    },
+
+    "load": {
+        "format": "[LOAD {load1}]",
+        "tooltip": false
+    },
+
+    "custom/pi-status": {
         "format": "{}",
         "return-type": "json",
-        "exec": "~/.config/waybar/scripts/notifications.sh",
-        "on-click": "swaync-client -t -sw",
-        "interval": 1,
-        "tooltip": false
+        "exec": "/home/blu/dotfiles/scripts/pi-status-waybar.sh",
+        "interval": 10
+    },
+
+    "custom/local-ip": {
+        "format": "[IP {}]",
+        "exec": "/home/blu/dotfiles/scripts/local-ip.sh",
+        "interval": 30
     }
 }

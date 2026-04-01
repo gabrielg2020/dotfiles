@@ -1,4 +1,4 @@
-@import "colors/vague.css";
+@import "colors/blue-matrix.css";
 
 * {
     border: none;
@@ -9,9 +9,9 @@
 }
 
 window#waybar {
-    background: rgba(50, 50, 50, 0.7);
+    background: @bg;
     color: @fg;
-    border-radius: 10px;
+    border-radius: 0px;
     margin: 8px;
 }
 
@@ -39,27 +39,46 @@ window#waybar {
     color: @error;
 }
 
-/* Center - Clock */
-#clock {
-    color: @string;
-    padding: 0 16px;
+/* Left - Network, Bluetooth, Audio */
+#network {
+    margin-right: 6px;
 }
 
-/* Right - CPU, Memory, Sound & Notifications */
+#bluetooth {
+    margin-right: 6px;
+}
+
+/* Left - Clock */
+#clock {
+    color: @string;
+    margin-left: 12px;
+    margin-right: 6px;
+}
+
+/* Right - Local IP, CPU, Memory, Temperature, Load */
+#custom-local-ip {
+    margin-right: 6px;
+}
+
 #cpu {
-    color: @builtin;
-    padding: 0 8px 0 12px;
+    margin-right: 6px;
 }
 
 #memory {
     color: @keyword;
-    padding: 0 12px 0 8px;
+    margin-right: 6px;
+}
+
+#temperature {
+    margin-right: 6px;
+}
+
+#load {
+    margin-right: 12px;
 }
 
 #pulseaudio {
-    color: @builtin;
-    padding: 0 12px;
-    font-size: 18px;
+    margin-right: 6px;
 }
 
 #pulseaudio.muted {
@@ -70,5 +89,4 @@ window#waybar {
     color: @hint;
     padding: 0 12px;
     margin: 4px 4px 4px 0;
-    font-size: 18px;
 }

@@ -1,0 +1,27 @@
+/**
+ * Blue Matrix Color Scheme Variables
+ */
+
+@define-color bg #101116;
+@define-color inactive-bg #101116;
+@define-color fg #00a2ff;
+@define-color float-border #76c1ff;
+@define-color line #686868;
+@define-color comment #686868;
+@define-color builtin #76c1ff;
+@define-color func #d57bff;
+@define-color string #fffc58;
+@define-color number #fffc67;
+@define-color property #c7c7c7;
+@define-color constant #60fdff;
+@define-color parameter #d682ec;
+@define-color visual #00b0ff;
+@define-color error #ff5680;
+@define-color warning #fffc58;
+@define-color hint #d57bff;
+@define-color operator #00a2ff;
+@define-color keyword #00b0ff;
+@define-color type #6871ff;
+@define-color search #00b0ff;
+@define-color plus #00ff9c;
+@define-color delta #fffc58;

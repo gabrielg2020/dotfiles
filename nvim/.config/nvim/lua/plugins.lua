@@ -33,10 +33,18 @@ local capabilities = blink.get_lsp_capabilities()
 
 -- setup lsps
 for _, server_name in ipairs(mason.get_installed_servers()) do
-	-- tell the lsp that it can use the features from blink.cmp
-	vim.lsp.config(server_name, {
-		capabilities = capabilities
-	})
+	-- configure jinja-lsp specifically for jinja filetype
+	if server_name == 'jinja_lsp' then
+		vim.lsp.config(server_name, {
+			capabilities = capabilities,
+			filetypes = { 'jinja', 'html' },
+		})
+	else
+		-- tell the lsp that it can use the features from blink.cmp
+		vim.lsp.config(server_name, {
+			capabilities = capabilities
+		})
+	end
 	-- find all server installed via mason and enable them in lsp
 	vim.lsp.enable(server_name)
 end
@@ -72,9 +80,12 @@ pick.registry.files = function(local_opts)
 		'--color=never', '--type=f',
 		'--hidden',  -- show hidden files
 		'--exclude=.git',  -- but exclude .git
+		'--exclude=.wwebjs_auth',  -- exclude whatsapp web auth
+		'--exclude=.wwebjs_cache',  -- exclude whatsapp web cache
 		'--exclude=node_modules',  -- exclude node_modules
 		'--exclude=__pycache__',  -- exclude python cache
 		'--exclude=venv',  -- exclude python venv
+    '--exclude=dist',  -- exclude distribution files
 	}
 	return pick.builtin.cli({ command = { 'fd', unpack(cli_opts) } }, local_opts)
 end
@@ -84,5 +95,7 @@ require 'mini.diff'.setup()        -- diff lines
 require 'mini.indentscope'.setup() -- indent scoping
 
 -- theme
-vim.cmd('colorscheme vague')
-vim.cmd(':hi statusline guibg=NONE')
+-- Switch between themes by changing the require line:
+-- - themes.vague
+-- - themes.blue-matrix
+require('themes.blue-matrix')

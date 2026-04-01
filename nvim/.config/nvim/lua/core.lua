@@ -27,3 +27,24 @@ vim.keymap.set('n', '<leader>fp', function()
   vim.fn.setreg('+', filepath)
   print('Copied: ' .. filepath)
 end, { desc = 'Copy current file path' })
+
+-- filetypes
+vim.filetype.add({
+	extension = {
+		njk = 'jinja',
+	}
+})
+
+-- autocmds
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function()
+		vim.opt_local.wrap = true
+		vim.opt_local.linebreak = true
+		vim.opt_local.breakindent = true
+		vim.keymap.set({ 'n', 'v', 'x' }, 'j', 'gj', { buffer = true })
+		vim.keymap.set({ 'n', 'v', 'x' }, 'k', 'gk', { buffer = true })
+		vim.keymap.set({ 'n', 'v', 'x' }, '<Down>', 'gj', { buffer = true })
+		vim.keymap.set({ 'n', 'v', 'x' }, '<Up>', 'gk', { buffer = true })
+	end,
+})

@@ -1,0 +1,59 @@
+{
+  "name": "vague",
+  "description": "A cool, dark, low contrast colorscheme. Pastel yet vivid, like a fleeting memory...",
+  "author": "skewb1k",
+  "fonts": {
+    "terminal": "FiraCode Nerd Font Mono",
+    "ui": "FiraCode Nerd Font Mono"
+  },
+  "colors": {
+    "bg": "141415",
+    "inactive_bg": "1c1c24",
+    "fg": "cdcdcd",
+    "float_border": "878787",
+    "line": "252530",
+    "comment": "606079",
+    "builtin": "b4d4cf",
+    "func": "c48282",
+    "string": "e8b589",
+    "number": "e0a363",
+    "property": "c3c3d5",
+    "constant": "aeaed1",
+    "parameter": "bb9dbd",
+    "visual": "333738",
+    "error": "d8647e",
+    "error_light": "e08398",
+    "warning": "f3be7c",
+    "hint": "7e98e8",
+    "operator": "90a0b5",
+    "keyword": "6e94b2",
+    "type": "9bb4bc",
+    "search": "405065",
+    "plus": "7fa563",
+    "plus_light": "99b782",
+    "delta": "f3be7c"
+  },
+  "terminal": {
+    "color0": "252530",
+    "color1": "d8647e",
+    "color2": "7fa563",
+    "color3": "f3be7c",
+    "color4": "6e94b2",
+    "color5": "bb9dbd",
+    "color6": "aeaed1",
+    "color7": "cdcdcd",
+    "color8": "606079",
+    "color9": "e08398",
+    "color10": "99b782",
+    "color11": "f5cb96",
+    "color12": "8ba9c1",
+    "color13": "c9b1ca",
+    "color14": "bebeda",
+    "color15": "d7d7d7"
+  },
+  "opacity": {
+    "active_border": "ee",
+    "inactive_border": "99",
+    "shadow": "99"
+  }
+}
