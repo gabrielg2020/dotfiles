@@ -12,6 +12,7 @@ vim.pack.add({
 	{ src = gh('mason-org/mason.nvim') },
 	{ src = gh('mason-org/mason-lspconfig.nvim') },
 	{ src = gh('saghen/blink.cmp') },
+	{ src = gh('milanglacier/minuet-ai.nvim') },
 })
 
 -- mason
@@ -30,6 +31,38 @@ blink.setup({
 	},
 })
 local capabilities = blink.get_lsp_capabilities()
+
+-- minuet: AI inline completion as an independent ghost-text layer.
+-- Backed by local Ollama running Qwen2.5-Coder; blink.cmp keeps handling
+-- LSP/buffer/snippet popups, so the two do not compete for the menu.
+require('minuet').setup({
+	provider = 'openai_fim_compatible',
+	n_completions = 1,    -- one completion only — saves resources on a local model
+	context_window = 512, -- start small; raise if the GPU has headroom
+	provider_options = {
+		openai_fim_compatible = {
+			api_key = 'TERM', -- Ollama needs no key; TERM is a dummy env var that always exists
+			name = 'Ollama',
+			end_point = 'http://localhost:11434/v1/completions',
+			model = 'qwen2.5-coder:1.5b',
+			optional = {
+				max_tokens = 256, -- room for multi-line suggestions
+				top_p = 0.9,
+			},
+		},
+	},
+	virtualtext = {
+		auto_trigger_ft = { '*' }, -- ghost text in every filetype
+		keymap = {
+			accept = '<A-A>',
+			accept_line = '<A-a>',
+			accept_n_lines = '<A-z>',
+			prev = '<A-[>',
+			next = '<A-]>',
+			dismiss = '<A-e>',
+		},
+	},
+})
 
 -- setup lsps
 for _, server_name in ipairs(mason.get_installed_servers()) do

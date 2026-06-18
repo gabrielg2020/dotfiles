@@ -9,12 +9,25 @@ vim.o.softtabstop = 2
 vim.o.swapfile = false
 vim.g.mapleader = " "
 vim.o.winborder = "rounded"
+vim.o.laststatus = 3
+vim.o.fillchars = 'horiz:─,horizup:┴,horizdown:┬,vert:│,vertleft:┤,vertright:├,verthoriz:┼'
 vim.cmd("set completeopt+=noselect")
 
 -- keymaps
 vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>', { desc = 'Save and source config' })
 vim.keymap.set('n', '<leader>w', ':write<CR>', { desc = 'Write file' })
 vim.keymap.set('n', '<leader>q', ':quit<CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>|', ':vsplit<CR>', { desc = 'Split vertically' })
+vim.keymap.set('n', '<leader>-', ':split<CR>', { desc = 'Split horizontally' })
+vim.keymap.set('n', '<leader>x', '<C-w>c', { desc = 'Close window' })
+vim.keymap.set('n', '<leader>H', '<C-w>5<', { desc = 'Resize window left' })
+vim.keymap.set('n', '<leader>L', '<C-w>5>', { desc = 'Resize window right' })
+vim.keymap.set('n', '<leader>J', '<C-w>5+', { desc = 'Resize window down' })
+vim.keymap.set('n', '<leader>K', '<C-w>5-', { desc = 'Resize window up' })
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left window' })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to upper window' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right window' })
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format, { desc = 'Format buffer' })
 vim.keymap.set('n', '<leader>lh', vim.diagnostic.open_float, { desc = 'Show diagnostics' })
 vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { desc = 'Go to definition' })

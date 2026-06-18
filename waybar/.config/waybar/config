@@ -6,7 +6,7 @@
 
     "modules-left": ["clock", "network", "bluetooth", "pulseaudio", "custom/pi-status"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["custom/local-ip", "cpu", "memory", "temperature", "load"],
+    "modules-right": ["custom/local-ip", "custom/cpu", "custom/gpu", "memory", "load"],
 
     "clock": {
         "format": "[{:%H:%M}]",
@@ -14,9 +14,9 @@
     },
 
     "network": {
-        "format-wifi": "[󰖩 ]",
-        "format-ethernet": "[󰈀 ]",
-        "format-disconnected": "[󰖪 ]",
+        "format-wifi": "[󰖩]",
+        "format-ethernet": "[󰈀]",
+        "format-disconnected": "[󰖪]",
         "tooltip-format": "{essid} ({signalStrength}%)",
         "on-click": "nm-connection-editor"
     },
@@ -43,19 +43,22 @@
         "active-only": true
     },
 
-    "cpu": {
-        "format": "[CPU {usage}%]",
-        "tooltip": false
+    "custom/cpu": {
+        "format": "[CPU {}%]",
+        "return-type": "json",
+        "exec": "/home/blu/dotfiles/scripts/cpu-waybar.sh",
+        "interval": 2
+    },
+
+    "custom/gpu": {
+        "format": "[GPU {}%]",
+        "return-type": "json",
+        "exec": "/home/blu/dotfiles/scripts/gpu-waybar.sh",
+        "interval": 2
     },
 
     "memory": {
         "format": "[MEM {used:0.1f}GB]",
-        "tooltip": false
-    },
-
-    "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
-        "format": "[TEMP {temperatureC}°C]",
         "tooltip": false
     },
 

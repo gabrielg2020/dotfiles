@@ -24,8 +24,8 @@ while true; do
 
     echo "=== Pi Status ==="
     echo ""
-    check_pi "hermes " "192.168.0.35"
-    check_pi "proteus" "192.168.0.20"
+    check_pi "hermes " "10.0.0.1"
+    check_pi "proteus" "10.0.0.3"
     echo ""
     echo "Updated: $(date '+%H:%M:%S')"
 

@@ -9,3 +9,7 @@ fi
 
 # Source local config (machine-specific)
 source ~/.zshrc.local
+alias shotbot='python -m shot_bot --shoot-key north --live --policy timed --delay-ms
+  635'
+
+. "$HOME/.local/share/../bin/env"

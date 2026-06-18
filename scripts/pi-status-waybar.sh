@@ -14,8 +14,10 @@ check_pi() {
 }
 
 # Check both Pis
-hermes=$(check_pi "192.168.0.35")
-proteus=$(check_pi "192.168.0.20")
+heimdall=$(check_pi "10.0.0.1")
+zeus=$(echo "●")
+proteus=$(check_pi "10.0.0.3")
+ninkasi=$(check_pi "10.0.0.4")
 
 # Output JSON for waybar
-echo "{\"text\":\"[$hermes $proteus]\", \"tooltip\":\"hermes (192.168.0.35)\\nproteus (192.168.0.20)\"}"
+echo "{\"text\":\"[$heimdall $zeus $proteus $ninkasi]\", \"tooltip\":\"heimdall (10.0.0.1)\\nzeus     (10.0.0.2)\\nproteus  (10.0.0.3)\\nninkasi  (10.0.0.4)\"}"

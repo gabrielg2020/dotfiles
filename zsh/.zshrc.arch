@@ -4,11 +4,12 @@ export BIN="/bin"
 export USRSBIN="/usr/sbin"
 export SBIN="/sbin"
 export USRLOCALBIN="/usr/local/bin"
+export HOMELOCALSHAREBIN="$HOME/.local/share/../bin/env"
 export NVIM_BOB="$HOME/.local/share/bob/nightly"
 export NVIM_BOB_BIN="$HOME/.local/share/bob/nvim-bin"
 export HOMELOCALBIN="$HOME/.local/bin"
 
-export PATH=$NVIM_BOB_BIN:$USRLOCALBIN:$USRBIN:$BIN:$USRSBIN:$SBIN:$HOMELOCALBIN
+export PATH=$NVIM_BOB_BIN:$USRLOCALBIN:$USRBIN:$BIN:$USRSBIN:$SBIN:$HOMELOCALBIN:$HOMELOCALSHAREBIN
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -39,11 +40,14 @@ fi
 
 # SSH Agent
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+    ssh-agent -t 8h > "$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
 if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
+
+# GPG Client
+export GPG_TTY=$(tty)
 
 # User configuration
 # Set aliases.
@@ -57,6 +61,7 @@ alias cdi="zi"
 alias lg="lazygit"
 alias tree="tree -a -I .git --gitignore"
 alias c="clear"
+alias beerssnap="! ssh ninkasi "docker exec beers-postgres pg_dump -U beers -d beers --clean --if-exists" | gzip > /home/blu/code/10000-beers/ops/backups/db/db-$(date +%Y%m%d_%H%M%S).sql.gz && cd /home/blu/code/10000-beers/ops/backups/db"
 
 # NVM
 export NVM_DIR="$HOME/.config/nvm"
