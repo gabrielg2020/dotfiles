@@ -13,3 +13,7 @@ alias shotbot='python -m shot_bot --shoot-key north --live --policy timed --dela
   635'
 
 . "$HOME/.local/share/../bin/env"
+
+# >>> Codex installer >>>
+export PATH="/home/blu/.local/bin:$PATH"
+# <<< Codex installer <<<

@@ -12,7 +12,7 @@ vim.pack.add({
 	{ src = gh('mason-org/mason.nvim') },
 	{ src = gh('mason-org/mason-lspconfig.nvim') },
 	{ src = gh('saghen/blink.cmp') },
-	{ src = gh('milanglacier/minuet-ai.nvim') },
+	-- { src = gh('milanglacier/minuet-ai.nvim') }, -- AI inline completion (disabled)
 })
 
 -- mason
@@ -35,6 +35,9 @@ local capabilities = blink.get_lsp_capabilities()
 -- minuet: AI inline completion as an independent ghost-text layer.
 -- Backed by local Ollama running Qwen2.5-Coder; blink.cmp keeps handling
 -- LSP/buffer/snippet popups, so the two do not compete for the menu.
+-- DISABLED for now — re-enable by uncommenting the plugin in vim.pack.add above
+-- and this setup block.
+--[[
 require('minuet').setup({
 	provider = 'openai_fim_compatible',
 	n_completions = 1,    -- one completion only — saves resources on a local model
@@ -63,6 +66,7 @@ require('minuet').setup({
 		},
 	},
 })
+--]]
 
 -- setup lsps
 for _, server_name in ipairs(mason.get_installed_servers()) do

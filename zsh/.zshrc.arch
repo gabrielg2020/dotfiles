@@ -61,7 +61,36 @@ alias cdi="zi"
 alias lg="lazygit"
 alias tree="tree -a -I .git --gitignore"
 alias c="clear"
-alias beerssnap="! ssh ninkasi "docker exec beers-postgres pg_dump -U beers -d beers --clean --if-exists" | gzip > /home/blu/code/10000-beers/ops/backups/db/db-$(date +%Y%m%d_%H%M%S).sql.gz && cd /home/blu/code/10000-beers/ops/backups/db"
+beersnap() {
+  emulate -L zsh
+  setopt pipe_fail
+
+  local snapshot_dir="$HOME/code/10000-beers-analysis/snapshots"
+  if [[ ! -d "$snapshot_dir" ]]; then
+    print -u2 "Snapshot directory does not exist: $snapshot_dir"
+    return 1
+  fi
+
+  local count timestamp output temporary
+  count=$(ssh ninkasi 'docker exec beers-postgres psql -U beers -d beers -Atc "SELECT COUNT(*) FROM beers"') || return 1
+  if [[ "$count" != <-> ]]; then
+    print -u2 "Could not determine the current beer count"
+    return 1
+  fi
+
+  timestamp=$(date +%Y-%m-%d_%H%M%S)
+  output="$snapshot_dir/${timestamp}__${count}-beers.sql.gz"
+  temporary="${output}.tmp"
+
+  if ssh ninkasi 'docker exec beers-postgres pg_dump -U beers -d beers --clean --if-exists' | gzip > "$temporary"; then
+    command mv "$temporary" "$output"
+    print -r -- "$output"
+  else
+    command rm -f "$temporary"
+    print -u2 "Snapshot failed"
+    return 1
+  fi
+}
 
 # NVM
 export NVM_DIR="$HOME/.config/nvm"
