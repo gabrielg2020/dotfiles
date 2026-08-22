@@ -80,3 +80,71 @@ vim.api.nvim_set_hl(0, 'DiagnosticError', { fg = colors.red })
 vim.api.nvim_set_hl(0, 'DiagnosticWarn', { fg = colors.yellow })
 vim.api.nvim_set_hl(0, 'DiagnosticInfo', { fg = colors.cyan })
 vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg = colors.purple })
+vim.api.nvim_set_hl(0, 'DiagnosticUnnecessary', { fg = colors.bright_black, italic = true })
+
+-- Treesitter captures
+-- The groups above cover the legacy syntax fallbacks; these add the
+-- distinctions treesitter can make that regex syntax cannot.
+vim.api.nvim_set_hl(0, '@variable', { fg = colors.white })
+vim.api.nvim_set_hl(0, '@variable.parameter', { fg = colors.bright_cyan })
+vim.api.nvim_set_hl(0, '@variable.member', { fg = colors.cyan })
+vim.api.nvim_set_hl(0, '@variable.builtin', { fg = colors.bright_purple, italic = true })
+vim.api.nvim_set_hl(0, '@property', { fg = colors.cyan })
+vim.api.nvim_set_hl(0, '@field', { fg = colors.cyan })
+
+vim.api.nvim_set_hl(0, '@constant', { fg = colors.bright_green })
+vim.api.nvim_set_hl(0, '@constant.builtin', { fg = colors.bright_green, bold = true })
+vim.api.nvim_set_hl(0, '@constant.macro', { fg = colors.bright_green })
+
+vim.api.nvim_set_hl(0, '@function', { fg = colors.purple })
+vim.api.nvim_set_hl(0, '@function.call', { fg = colors.purple })
+vim.api.nvim_set_hl(0, '@function.builtin', { fg = colors.bright_purple })
+vim.api.nvim_set_hl(0, '@function.method', { fg = colors.purple })
+vim.api.nvim_set_hl(0, '@constructor', { fg = colors.bright_blue })
+vim.api.nvim_set_hl(0, '@module', { fg = colors.bright_blue })
+vim.api.nvim_set_hl(0, '@label', { fg = colors.bright_purple })
+
+vim.api.nvim_set_hl(0, '@keyword', { fg = colors.blue })
+vim.api.nvim_set_hl(0, '@keyword.return', { fg = colors.red })
+vim.api.nvim_set_hl(0, '@keyword.import', { fg = colors.bright_purple })
+vim.api.nvim_set_hl(0, '@keyword.exception', { fg = colors.red })
+
+vim.api.nvim_set_hl(0, '@type', { fg = colors.bright_blue })
+vim.api.nvim_set_hl(0, '@type.builtin', { fg = colors.bright_blue, italic = true })
+
+vim.api.nvim_set_hl(0, '@string', { fg = colors.yellow })
+vim.api.nvim_set_hl(0, '@string.escape', { fg = colors.bright_cyan })
+vim.api.nvim_set_hl(0, '@string.special', { fg = colors.bright_cyan })
+vim.api.nvim_set_hl(0, '@number', { fg = colors.bright_yellow })
+vim.api.nvim_set_hl(0, '@boolean', { fg = colors.cyan })
+
+vim.api.nvim_set_hl(0, '@punctuation.bracket', { fg = colors.white })
+vim.api.nvim_set_hl(0, '@punctuation.delimiter', { fg = colors.white })
+vim.api.nvim_set_hl(0, '@punctuation.special', { fg = colors.bright_cyan })
+
+vim.api.nvim_set_hl(0, '@comment', { fg = colors.bright_black, italic = true })
+vim.api.nvim_set_hl(0, '@comment.todo', { fg = colors.yellow, bold = true })
+vim.api.nvim_set_hl(0, '@comment.note', { fg = colors.cyan, bold = true })
+vim.api.nvim_set_hl(0, '@comment.warning', { fg = colors.bright_yellow, bold = true })
+vim.api.nvim_set_hl(0, '@comment.error', { fg = colors.red, bold = true })
+
+vim.api.nvim_set_hl(0, '@markup.heading', { fg = colors.blue, bold = true })
+vim.api.nvim_set_hl(0, '@markup.strong', { bold = true })
+vim.api.nvim_set_hl(0, '@markup.italic', { italic = true })
+vim.api.nvim_set_hl(0, '@markup.link', { fg = colors.cyan, underline = true })
+vim.api.nvim_set_hl(0, '@markup.raw', { fg = colors.green })
+vim.api.nvim_set_hl(0, '@markup.list', { fg = colors.purple })
+vim.api.nvim_set_hl(0, '@diff.plus', { fg = colors.green })
+vim.api.nvim_set_hl(0, '@diff.minus', { fg = colors.red })
+
+-- LSP semantic tokens
+-- These outrank treesitter, so the broad token types are cleared deliberately:
+-- gopls tags every package-level identifier as `variable`, which would flatten
+-- the @property and @variable.parameter distinctions above back into one
+-- colour. Only the modifiers are kept — they carry what parsing cannot derive,
+-- namely that an identifier is genuinely immutable.
+vim.api.nvim_set_hl(0, '@lsp.type.variable', {})
+vim.api.nvim_set_hl(0, '@lsp.type.property', {})
+vim.api.nvim_set_hl(0, '@lsp.type.comment', {})
+vim.api.nvim_set_hl(0, '@lsp.typemod.variable.readonly', { fg = colors.bright_green })
+vim.api.nvim_set_hl(0, '@lsp.typemod.property.readonly', { fg = colors.bright_green })
