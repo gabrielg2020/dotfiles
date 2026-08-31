@@ -20,11 +20,15 @@ vim.pack.add({
 	{ src = gh('vague2k/vague.nvim') },
 	{ src = gh('neovim/nvim-lspconfig') },
 	{ src = gh('stevearc/oil.nvim') },
+	{ src = gh('nvim-tree/nvim-tree.lua') },
+	{ src = gh('MagicDuck/grug-far.nvim') },
 	{ src = gh('echasnovski/mini.pick') },
 	{ src = gh('echasnovski/mini.pairs') },
 	{ src = gh('echasnovski/mini.comment') },
 	{ src = gh('echasnovski/mini.diff') },
+	{ src = gh('echasnovski/mini.surround') },
 	{ src = gh('echasnovski/mini.indentscope') },
+	{ src = gh('sindrets/diffview.nvim') },
 	{ src = gh('mason-org/mason.nvim') },
 	{ src = gh('mason-org/mason-lspconfig.nvim') },
 	{ src = gh('saghen/blink.cmp') },
@@ -45,6 +49,28 @@ blink.setup({
 		prebuilt_binaries = {
 			force_version = "v1.8.0",
 		}
+	},
+	completion = {
+		menu = { border = 'rounded' },
+		documentation = {
+			auto_show = true,
+			auto_show_delay_ms = 75,
+			window = {
+				border = 'rounded',
+				max_width = 65,
+				max_height = 12,
+			},
+		},
+	},
+	-- parameter tooltip when typing inside a function call; kept to a slim
+	-- strip so monster generic signatures (zod!) do not flood the screen
+	signature = {
+		enabled = true,
+		window = {
+			border = 'rounded',
+			max_width = 80,
+			max_height = 3,
+		},
 	},
 })
 local capabilities = blink.get_lsp_capabilities()
@@ -125,6 +151,23 @@ require 'oil'.setup({
 	}
 })
 
+-- project-wide find and replace panel
+require 'grug-far'.setup({
+	transient = true, -- close the panel buffer when hidden
+})
+
+-- sidebar file tree; directory buffers stay with oil
+require 'nvim-tree'.setup({
+	hijack_netrw = false,
+	hijack_directories = { enable = false },
+	renderer = {
+		icons = {
+			-- no nvim-web-devicons installed, so keep to built-in glyphs
+			show = { file = false, folder = false, folder_arrow = true, git = true },
+		},
+	},
+})
+
 -- minis
 local pick = require 'mini.pick'
 pick.setup()        -- selection picker
@@ -145,8 +188,10 @@ pick.registry.files = function(local_opts)
 	}
 	return pick.builtin.cli({ command = { 'fd', unpack(cli_opts) } }, local_opts)
 end
+require 'diffview'.setup()         -- source control diff view
 require 'mini.comment'.setup()     -- block commenting
 require 'mini.pairs'.setup()       -- autopairs
+require 'mini.surround'.setup()    -- surround actions
 require 'mini.diff'.setup()        -- diff lines
 require 'mini.indentscope'.setup() -- indent scoping
 

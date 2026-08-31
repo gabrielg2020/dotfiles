@@ -31,11 +31,14 @@ local colors = {
   bright_white = '#ffffff',
   selection_bg = '#c1deff',
   cursor = '#76ff9f',
+  panel = '#181a22', -- floats and popups: a step lighter than bg
 }
 
 -- Editor highlights
 vim.api.nvim_set_hl(0, 'Normal', { fg = colors.fg, bg = colors.bg })
-vim.api.nvim_set_hl(0, 'NormalFloat', { fg = colors.fg, bg = colors.bg })
+vim.api.nvim_set_hl(0, 'NormalFloat', { fg = colors.white, bg = colors.panel })
+vim.api.nvim_set_hl(0, 'FloatBorder', { fg = colors.blue, bg = colors.panel })
+vim.api.nvim_set_hl(0, 'FloatTitle', { fg = colors.cyan, bg = colors.panel, bold = true })
 vim.api.nvim_set_hl(0, 'NormalNC', { fg = colors.fg, bg = colors.bg })
 vim.api.nvim_set_hl(0, 'Cursor', { fg = colors.bg, bg = colors.cursor })
 vim.api.nvim_set_hl(0, 'CursorLine', { bg = colors.bright_black })
@@ -69,8 +72,10 @@ vim.api.nvim_set_hl(0, 'StatusLine', { fg = colors.fg, bg = 'NONE' })
 vim.api.nvim_set_hl(0, 'StatusLineNC', { fg = colors.bright_black, bg = 'NONE' })
 vim.api.nvim_set_hl(0, 'WinSeparator', { fg = colors.blue })
 vim.api.nvim_set_hl(0, 'VertSplit', { fg = colors.blue })
-vim.api.nvim_set_hl(0, 'Pmenu', { fg = colors.fg, bg = colors.bright_black })
+vim.api.nvim_set_hl(0, 'Pmenu', { fg = colors.white, bg = colors.panel })
 vim.api.nvim_set_hl(0, 'PmenuSel', { fg = colors.bg, bg = colors.blue })
+vim.api.nvim_set_hl(0, 'PmenuSbar', { bg = colors.panel })
+vim.api.nvim_set_hl(0, 'PmenuThumb', { bg = colors.bright_black })
 vim.api.nvim_set_hl(0, 'TabLine', { fg = colors.bright_black, bg = colors.bg })
 vim.api.nvim_set_hl(0, 'TabLineFill', { bg = colors.bg })
 vim.api.nvim_set_hl(0, 'TabLineSel', { fg = colors.fg, bg = colors.bg })
