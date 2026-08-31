@@ -56,3 +56,14 @@ hl.window_rule({
 -- Apps that live on the second monitor
 hl.window_rule({ name = "discord-ws6", match = { class = "discord" }, workspace = "6" })
 hl.window_rule({ name = "spotify-ws7", match = { class = "Spotify" }, workspace = "7" })
+
+-- Scratchpad: Super+M toggles the "magic" special workspace; spawn a terminal
+-- in it the first time so it's never empty
+hl.workspace_rule({ workspace = "special:magic", on_created_empty = "kitty --class scratchpad" })
+hl.window_rule({
+    name   = "scratchpad-float",
+    match  = { class = "scratchpad" },
+    float  = true,
+    size   = { "monitor_w * 0.6", "monitor_h * 0.6" },
+    center = true,
+})
