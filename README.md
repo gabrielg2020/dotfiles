@@ -1,5 +1,12 @@
 # dotfiles
 
+```
+ _._     _,-'""`-._
+(,-.`._,'(       |\`-/|
+    `-.-' \ )-`( , o o)
+          `-    \`_`"'-
+```
+
 Personal configuration for CachyOS (Arch) running Hyprland, managed with GNU Stow.
 
 ## Prerequisites
