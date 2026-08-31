@@ -1,0 +1,20 @@
+{
+  "name": "vague-theme",
+  "displayName": "Vague",
+  "description": "A cool, dark, low contrast colour scheme. Pastel yet vivid, like a fleeting memory. Port of skewb1k's vague to VS Code.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Vague",
+        "uiTheme": "vs-dark",
+        "path": "./themes/vague-color-theme.json"
+      }
+    ]
+  }
+}

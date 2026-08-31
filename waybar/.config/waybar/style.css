@@ -1,74 +1,50 @@
-@import "colors/vague.css";
+@import "colors/noir.css";
 
 * {
     border: none;
     border-radius: 0;
-    font-family: "IBM Plex Mono";
-    font-size: 13px;
+    font-family: "FiraCode Nerd Font Mono";
+    font-size: 12px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(50, 50, 50, 0.7);
+    background: @bg;
     color: @fg;
-    border-radius: 10px;
-    margin: 8px;
 }
 
-/* Left - Workspaces */
+/* Left — workspaces */
 #workspaces {
-    padding: 0 8px;
-    margin: 4px 0 4px 4px;
+    padding: 0 4px;
 }
 
 #workspaces button {
-    padding: 0 12px;
-    color: @comment;
+    padding: 0 8px;
+    color: @muted;
     background: transparent;
 }
 
 #workspaces button:hover {
-    color: @type;
+    color: @fg;
+    box-shadow: none;
 }
 
 #workspaces button.active {
-    color: @string;
+    color: @bright;
 }
 
 #workspaces button.urgent {
-    color: @error;
+    color: @urgent;
 }
 
-/* Center - Clock */
+/* Left — focused window title */
+#window {
+    color: @fg;
+    margin-left: 12px;
+}
+
+/* Right — clock */
 #clock {
-    color: @string;
-    padding: 0 16px;
-}
-
-/* Right - CPU, Memory, Sound & Notifications */
-#cpu {
-    color: @builtin;
-    padding: 0 8px 0 12px;
-}
-
-#memory {
-    color: @keyword;
-    padding: 0 12px 0 8px;
-}
-
-#pulseaudio {
-    color: @builtin;
+    color: @muted;
     padding: 0 12px;
-    font-size: 18px;
-}
-
-#pulseaudio.muted {
-    color: @error;
-}
-
-#custom-notifications {
-    color: @hint;
-    padding: 0 12px;
-    margin: 4px 4px 4px 0;
-    font-size: 18px;
 }

@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Noir
+Description=Near-black minimal boot and LUKS screen with the cat
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/noir
+ScriptFile=/usr/share/plymouth/themes/noir/noir.script

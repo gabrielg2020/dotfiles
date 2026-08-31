@@ -1,78 +1,55 @@
 # dotfiles
 
-Personal configuration files for macOS and Arch Linux, managed with GNU Stow.
+Personal configuration for CachyOS (Arch) running Hyprland, managed with GNU Stow.
 
 ## Prerequisites
 
-### Core Tools
 - [GNU Stow](https://www.gnu.org/software/stow/) - Symlink manager
 - [Oh-My-Zsh](https://ohmyz.sh/) - Zsh framework
-- [Homebrew](https://brew.sh/) (macOS only)
-
-### Applications
-- [Neovim](https://neovim.io/) - Text editor
-  - Using nightly build via [bob](https://github.com/MordechaiHadad/bob) for the built-in package manager
-  - Will likely move to stable once the built-in package manager is fully released or I'll stick with Lazy... who knows!
-- [Kitty](https://sw.kovidgoyal.net/kitty/) - Terminal emulator
-- [Tmux](https://github.com/tmux/tmux) - Terminal multiplexer
-
-### Development Dependencies
-- [Node.js](https://nodejs.org/) - JavaScript runtime (managed via nvm)
-- [Python](https://www.python.org/) - Python interpreter
-- [Go](https://go.dev/) - Go programming language
+- [oh-my-posh](https://ohmyposh.dev/) - Prompt
+- [Neovim](https://neovim.io/) nightly via [bob](https://github.com/MordechaiHadad/bob)
+- [Kitty](https://sw.kovidgoyal.net/kitty/), [tmux](https://github.com/tmux/tmux), [Hyprland](https://hypr.land/) 0.55+ (Lua config)
+- waybar, rofi, swaync, hyprlock, hypridle, awww, cliphist, fastfetch, qt6ct/qt5ct
 
 ## Setup
 
-### Machine-Specific Configuration
-
-Before stowing, create local configuration files for sensitive or machine-specific settings:
-
-1. Create `~/.zshrc.local` for machine-specific shell configuration:
-   ```bash
-   touch ~/.zshrc.local
-   ```
-
-2. Create `~/.secrets` for sensitive environment variables:
-   ```bash
-   touch ~/.secrets
-   ```
-
-These files are gitignored and won't be tracked.
-
-### Installing Configurations
-
-From the dotfiles directory, use GNU Stow to symlink individual packages:
+Create the untracked local files before stowing:
 
 ```bash
-# Neovim configuration
-stow nvim
-
-# Kitty terminal
-stow kitty
-
-# Tmux configuration
-stow tmux
-
-# Zsh configuration
-stow zsh
+touch ~/.zshrc.local   # machine-specific shell config
+touch ~/.secrets       # sensitive environment variables
 ```
 
-To remove a configuration:
+Stow each package you want from the repo root:
 
 ```bash
-stow -D <package-name>
+stow zsh nvim kitty tmux hypr waybar rofi swaync fastfetch qt
+stow -D <package>      # remove one
 ```
 
 ## Structure
 
-Each directory represents a Stow package that mirrors the home directory structure:
+Each directory is a Stow package mirroring `$HOME`:
 
 ```
 dotfiles/
-├── nvim/.config/nvim/
-├── kitty/.config/kitty/
-├── tmux/.config/tmux/
-└── zsh/
+├── zsh/            .zshrc, theme/ (oh-my-posh)
+├── nvim/           .config/nvim
+├── kitty/          .config/kitty
+├── tmux/           .config/tmux
+├── hypr/           .config/hypr — hyprland.lua + lua/ modules, hyprlock, hypridle
+├── waybar/         .config/waybar
+├── rofi/           .config/rofi
+├── swaync/         .config/swaync
+├── fastfetch/      .config/fastfetch
+├── qt/             .config/qt6ct, .config/qt5ct
+├── plymouth/       boot splash theme — not stowed, install with scripts/plymouth-install.sh
+└── scripts/        wallpaper.sh, osd.sh, plymouth-install.sh, waybar helpers
 ```
 
-When you run `stow nvim`, it creates symlinks from `~/.config/nvim/` to `dotfiles/nvim/.config/nvim/`.
+## Theme
+
+One hand-crafted theme, **noir**: near-black monochrome chrome with muted pastel
+colour reserved for code. Each app has a `themes/` directory (or colour file) and
+an include/source/require line pointing at `noir`; older themes remain alongside
+as one-line switchable fallbacks.

@@ -1,6 +1,5 @@
 /**
- * Vague Theme for SwayNC
- * Based on https://github.com/vague-theme/vague.nvim
+ * Noir Theme for SwayNC — monochrome, square, near-black
  */
 
 * {
@@ -10,17 +9,17 @@
 
 /* Control Center */
 .control-center {
-  background: #141415;
-  border: 2px solid #252530;
-  border-radius: 8px;
+  background: #0a0a0b;
+  border: 1px solid #28282c;
+  border-radius: 0;
   padding: 12px;
 }
 
 /* Header */
 .control-center .widget-title {
-  background: #1c1c24;
-  color: #e8b589;
-  border-radius: 6px;
+  background: #161618;
+  color: #ececec;
+  border-radius: 0;
   padding: 12px;
   margin-bottom: 12px;
   font-weight: bold;
@@ -28,46 +27,46 @@
 }
 
 .control-center .widget-title button {
-  background: #252530;
-  color: #cdcdcd;
+  background: #28282c;
+  color: #c9c9c9;
   border: none;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 6px 12px;
   margin-left: 8px;
 }
 
 .control-center .widget-title button:hover {
-  background: #333738;
-  color: #e8b589;
+  background: #38383d;
+  color: #ececec;
 }
 
 /* DND Toggle */
 .control-center .widget-dnd {
-  background: #1c1c24;
-  color: #cdcdcd;
-  border-radius: 6px;
+  background: #161618;
+  color: #c9c9c9;
+  border-radius: 0;
   padding: 12px;
   margin-bottom: 12px;
 }
 
 .control-center .widget-dnd > switch {
-  background: #252530;
+  background: #28282c;
   border-radius: 12px;
 }
 
 .control-center .widget-dnd > switch:checked {
-  background: #6e94b2;
+  background: #6b6b73;
 }
 
 .control-center .widget-dnd > switch slider {
-  background: #cdcdcd;
+  background: #ececec;
   border-radius: 50%;
 }
 
 /* Media Player */
 .control-center .widget-mpris {
-  background: #1c1c24;
-  border-radius: 6px;
+  background: #161618;
+  border-radius: 0;
   padding: 12px;
   margin-bottom: 12px;
 }
@@ -78,32 +77,32 @@
 }
 
 .widget-mpris-album-art {
-  border-radius: 6px;
+  border-radius: 0;
 }
 
 .widget-mpris-title {
-  color: #e8b589;
+  color: #ececec;
   font-weight: bold;
   font-size: 14px;
 }
 
 .widget-mpris-subtitle {
-  color: #9bb4bc;
+  color: #6b6b73;
   font-size: 12px;
 }
 
 .widget-mpris-player button {
-  background: #252530;
-  color: #6e94b2;
+  background: #28282c;
+  color: #c9c9c9;
   border: none;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 8px;
   margin: 4px;
 }
 
 .widget-mpris-player button:hover {
-  background: #333738;
-  color: #9bb4bc;
+  background: #38383d;
+  color: #ececec;
 }
 
 /* Notifications List */
@@ -112,36 +111,36 @@
 }
 
 .notification {
-  background: #1c1c24;
-  border: 1px solid #252530;
-  border-radius: 6px;
+  background: #161618;
+  border: 1px solid #28282c;
+  border-radius: 0;
   padding: 12px;
   margin: 4px 0;
 }
 
 .notification:hover {
-  background: #252530;
+  background: #1c1c1f;
 }
 
 /* Notification Content */
 .notification-content {
-  color: #cdcdcd;
+  color: #c9c9c9;
 }
 
 .notification .summary {
-  color: #e8b589;
+  color: #ececec;
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 4px;
 }
 
 .notification .body {
-  color: #cdcdcd;
+  color: #c9c9c9;
   font-size: 13px;
 }
 
 .notification .app-name {
-  color: #606079;
+  color: #6b6b73;
   font-size: 11px;
 }
 
@@ -152,36 +151,36 @@
 
 /* Close Button */
 .close-button {
-  background: #252530;
+  background: #28282c;
   color: #d8647e;
   border: none;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 4px 8px;
 }
 
 .close-button:hover {
   background: #d8647e;
-  color: #141415;
+  color: #0a0a0b;
 }
 
 /* Notification Actions */
 .notification .notification-action {
-  background: #252530;
-  color: #6e94b2;
+  background: #28282c;
+  color: #c9c9c9;
   border: none;
-  border-radius: 4px;
+  border-radius: 0;
   padding: 6px 12px;
   margin: 4px 4px 0 0;
 }
 
 .notification .notification-action:hover {
-  background: #333738;
-  color: #9bb4bc;
+  background: #38383d;
+  color: #ececec;
 }
 
 /* Critical Notifications */
 .notification.critical {
-  border: 2px solid #d8647e;
+  border: 1px solid #d8647e;
 }
 
 .notification.critical .summary {
@@ -194,9 +193,9 @@
 }
 
 .floating-notifications .notification {
-  background: #1c1c24;
-  border: 2px solid #252530;
-  border-radius: 8px;
+  background: #0a0a0b;
+  border: 1px solid #28282c;
+  border-radius: 0;
   padding: 12px;
   margin: 8px;
 }
@@ -207,12 +206,12 @@
 }
 
 .control-center scrollbar slider {
-  background: #252530;
-  border-radius: 4px;
+  background: #28282c;
+  border-radius: 0;
 }
 
 .control-center scrollbar slider:hover {
-  background: #333738;
+  background: #38383d;
 }
 
 /* Empty Notifications */
@@ -227,8 +226,8 @@
 
 .notification-group-headers {
   background: transparent;
-  color: #9bb4bc;
-  border-radius: 6px;
+  color: #6b6b73;
+  border-radius: 0;
   padding: 8px 12px;
   margin-bottom: 4px;
   font-weight: bold;

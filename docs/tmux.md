@@ -98,6 +98,6 @@ Sensible default settings for tmux that everyone can agree on.
 - **Mouse support enabled** - Click to switch panes, resize panes, and select text
 - **Windows and panes start at 1** - More ergonomic for keyboard navigation
 - **Vi-mode for copy mode** - Familiar keybindings for Vim users
-- **Cross-platform clipboard** - Automatically detects macOS (pbcopy) or Linux (xclip)
+- **Wayland clipboard** - Yank and mouse selection copy via wl-copy
 - **True colour support** - Better colour rendering for modern terminal applications
 - **Fast escape time** - Reduced delay for better responsiveness with Vim/Neovim
