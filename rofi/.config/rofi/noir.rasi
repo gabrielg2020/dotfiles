@@ -1,0 +1,83 @@
+/**
+ * Noir theme for Rofi — monochrome, square, near-black
+ */
+
+* {
+    bg:                 #0a0a0b;
+    surface:            #161618;
+    line:               #28282c;
+    muted:              #6b6b73;
+    fg:                 #c9c9c9;
+    bright:             #ececec;
+
+    background-color:   transparent;
+    text-color:         @fg;
+    font:               "FiraCode Nerd Font Mono 12";
+}
+
+window {
+    transparency:       "real";
+    background-color:   @bg;
+    border:             1px;
+    border-color:       @line;
+    border-radius:      0px;
+    width:              600px;
+    padding:            20px;
+}
+
+mainbox {
+    background-color:   transparent;
+    children:           [inputbar, listview];
+    spacing:            20px;
+}
+
+inputbar {
+    background-color:   @surface;
+    text-color:         @fg;
+    border-radius:      0px;
+    padding:            12px 16px;
+    children:           [prompt, entry];
+    spacing:            10px;
+}
+
+prompt {
+    background-color:   transparent;
+    text-color:         @muted;
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         @fg;
+    placeholder:        "Search...";
+    placeholder-color:  @muted;
+}
+
+listview {
+    background-color:   transparent;
+    lines:              8;
+    spacing:            4px;
+    scrollbar:          false;
+}
+
+element {
+    background-color:   transparent;
+    text-color:         @fg;
+    border-radius:      0px;
+    padding:            8px 12px;
+}
+
+element selected {
+    background-color:   @line;
+    text-color:         @bright;
+}
+
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+}
+
+element-icon {
+    background-color:   transparent;
+    size:               1.2em;
+    padding:            0 8px 0 0;
+}

@@ -5,38 +5,38 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "lightYellow",
+          "foreground": "#c9c9c9",
           "style": "plain",
           "template": "{{ .UserName }} ",
           "type": "session"
         },
         {
-          "foreground": "lightYellow",
+          "foreground": "#c9c9c9",
           "properties": {
             "style": "folder"
           },
           "style": "plain",
-          "template": "<#ffffff>in</>",
+          "template": "<#6b6b73>in</>",
           "type": "path"
         },
         {
           "type": "path",
-          "foreground": "lightYellow",
+          "foreground": "#ececec",
           "properties": {
             "style": "agnoster_short",
             "folder_separator_icon": "/",
-            "home_icon": "\ueb06"
+            "home_icon": ""
           },
           "template": " {{ .Path }} "
         },
         {
           "type": "git",
-          "foreground": "lightYellow",
+          "foreground": "#6e94b2",
           "properties": {
-            "branch_icon": "\ue0a0 "
+            "branch_icon": " "
           },
           "style": "plain",
-          "template": "<#ffffff>on</> {{ .HEAD }} "
+          "template": "<#6b6b73>on</> {{ .HEAD }} "
         }
       ],
       "type": "prompt"
@@ -47,11 +47,11 @@
         {
           "type": "status",
           "style": "diamond",
-          "foreground": "#1ee925",
+          "foreground": "#7fa563",
           "foreground_templates": [
-            "{{ if .Error }}#e91e63{{ end }}"
+            "{{ if .Error }}#d8647e{{ end }}"
           ],
-          "template": "[\uf071 {{ .Code }}] ",
+          "template": "[  {{ .Code }}] ",
           "properties": {
             "always_enabled": true
           }
@@ -59,8 +59,8 @@
         {
           "type": "executiontime",
           "style": "powerline",
-          "foreground": "#ffff00",
-          "template": "[ {{ .FormattedMs }}] ",
+          "foreground": "#6b6b73",
+          "template": "[ {{ .FormattedMs }}] ",
           "properties": {
             "threshold": 500,
             "style": "austin",
@@ -68,37 +68,37 @@
           }
         },
         {
-          "foreground": "lightBlue",
+          "foreground": "#9bb4bc",
           "type": "go",
           "style": "powerline",
-          "template": "[\ue626 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] "
+          "template": "[  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] "
         },
         {
-          "foreground": "lightYellow",
+          "foreground": "#e8b589",
           "type": "python",
           "style": "powerline",
-          "template": "[\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Full }}{{ end }}{{ end }}] "
+          "template": "[  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Full }}{{ end }}{{ end }}] "
         },
         {
-          "foreground": "lightGreen",
+          "foreground": "#7fa563",
           "type": "node",
           "style": "powerline",
           "template": "[ {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] "
         },
         {
-          "foreground": "red",
+          "foreground": "#d8647e",
           "type": "ruby",
           "style": "powerline",
-          "template": "[\ue791{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] "
+          "template": "[ {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] "
         },
         {
-          "foreground": "lightYellow",
+          "foreground": "#e8b589",
           "type": "java",
           "style": "powerline",
-          "template": "[\ue738 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] "
+          "template": "[  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}] "
         },
         {
-          "foreground": "lightBlue",
+          "foreground": "#9bb4bc",
           "type": "dart",
           "style": "powerline",
           "template": "[ {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Full }}{{ end }}{{ end }}] "
@@ -111,9 +111,9 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "lightGreen",
+          "foreground": "#ececec",
           "style": "plain",
-          "template": "\u276f",
+          "template": "❯",
           "type": "text"
         }
       ],

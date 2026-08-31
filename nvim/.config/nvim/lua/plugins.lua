@@ -219,6 +219,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- theme
 -- Switch between themes by changing the require line:
+-- - themes.noir
 -- - themes.vague
 -- - themes.blue-matrix
-require('themes.blue-matrix')
+require('themes.noir')

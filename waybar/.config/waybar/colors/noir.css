@@ -1,0 +1,12 @@
+/**
+ * Noir colour variables
+ * Monochrome chrome — near-black bg, grey/white text.
+ */
+
+@define-color bg rgba(10, 10, 11, 0.85);
+@define-color surface #161618;
+@define-color line #28282c;
+@define-color muted #6b6b73;
+@define-color fg #c9c9c9;
+@define-color bright #ececec;
+@define-color urgent #d8647e;

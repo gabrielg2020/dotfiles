@@ -1,82 +1,26 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 34,
-    "spacing": 4,
+    "height": 24,
+    "spacing": 0,
 
-    "modules-left": ["clock", "network", "bluetooth", "pulseaudio", "custom/pi-status"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["custom/local-ip", "custom/cpu", "custom/gpu", "memory", "load"],
-
-    "clock": {
-        "format": "[{:%H:%M}]",
-        "tooltip": false
-    },
-
-    "network": {
-        "format-wifi": "[󰖩]",
-        "format-ethernet": "[󰈀]",
-        "format-disconnected": "[󰖪]",
-        "tooltip-format": "{essid} ({signalStrength}%)",
-        "on-click": "nm-connection-editor"
-    },
-
-    "bluetooth": {
-        "format": "[󰂯]",
-        "format-disabled": "[󰂲]",
-        "format-connected": "[󰂱]",
-        "tooltip-format": "{controller_alias}\t{controller_address}",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "on-click": "blueman-manager"
-    },
-
-    "pulseaudio": {
-        "format": "[󰕾]",
-        "format-muted": "[󰖁]",
-        "tooltip": false,
-        "on-click": "pavucontrol"
-    },
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-right": ["clock"],
 
     "hyprland/workspaces": {
-        "format": "[{name}]",
-        "active-only": true
+        "format": "{name}",
+        "active-only": false
     },
 
-    "custom/cpu": {
-        "format": "[CPU {}%]",
-        "return-type": "json",
-        "exec": "/home/blu/dotfiles/scripts/cpu-waybar.sh",
-        "interval": 2
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 80,
+        "separate-outputs": true
     },
 
-    "custom/gpu": {
-        "format": "[GPU {}%]",
-        "return-type": "json",
-        "exec": "/home/blu/dotfiles/scripts/gpu-waybar.sh",
-        "interval": 2
-    },
-
-    "memory": {
-        "format": "[MEM {used:0.1f}GB]",
+    "clock": {
+        "format": "{:%H:%M:%S  %d/%m/%Y}",
+        "interval": 1,
         "tooltip": false
-    },
-
-    "load": {
-        "format": "[LOAD {load1}]",
-        "tooltip": false
-    },
-
-    "custom/pi-status": {
-        "format": "{}",
-        "return-type": "json",
-        "exec": "/home/blu/dotfiles/scripts/pi-status-waybar.sh",
-        "interval": 10
-    },
-
-    "custom/local-ip": {
-        "format": "[IP {}]",
-        "exec": "/home/blu/dotfiles/scripts/local-ip.sh",
-        "interval": 30
     }
 }
