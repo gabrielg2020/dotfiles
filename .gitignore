@@ -1,1 +1,4 @@
 xinput
+
+# Kitty machine-specific overrides
+.config/kitty/local.conf
